@@ -5,5 +5,6 @@ class Me {
 	}
     show(){
         console.log("my name is " + this.name);
+        console.log("my age is " + this.age);
     }
 }
