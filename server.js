@@ -7,4 +7,7 @@ class Me {
         console.log("my name is " + this.name);
         console.log("my age is " + this.age);
     }
+    say(){
+        console.log("hello,I'm " + this.name);
+    }
 }
