@@ -25,3 +25,33 @@ console.log("我是master分支的更改");
 
 master分支更新1
 master分支更新2
+
+var mongoose = require("mongoose");
+mongoose.createConnect("mongodb://127.0.0.1/test",{useMongoClient:true});
+var connection = mongoose.connection;
+mongoose.Promise = global.Promise;
+
+var Schema = mongoose.Schema;
+
+var PersonSchema = new Schema({
+    name:String,
+    age:Number,
+    sex:Boolean,
+    _id:Schema.Types.ObjectId
+});
+
+var Person = mongoose.model("Peron",PersonSchema,"dbname");
+
+var person = new Person();
+
+person.name = "jack";
+person.age = 24;
+person.sex = true;
+person
+.save()
+.then(function(doc){
+    console.log(doc);
+})
+.catch(function(err){
+    console.error(err);
+});
