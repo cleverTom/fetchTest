@@ -3,4 +3,7 @@ class Me {
 		this.name = name;
 		this.age = age;
 	}
+    show(){
+        console.log("my name is " + this.name);
+    }
 }
